@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        
+      let canvas = document.querySelector("canvas"); 
+      canvas.height = window.innerHeight; //window ki innerheight assign krdi (puri height)
+      canvas.width = window.innerWidth;   //window ki innerwidth assign krdi (puri width)
+
+      let ctx = canvas.getContext("2d");  // 2d bnane ke liye
+
+
+      let img = document.createElement("img");   // creates an element if img type
+      img.src = "img.jpg";   // src of ing -> first i downloaded and then gave the address/src
+
+      img.addEventListener("load", function() {  // eventListener added to img tag as it takes some time to load and when it loads completely , the given event is fired
+        ctx.drawImage(img, 0, 0, 1300, 1000);   // draws image, parameters-> (which_Image, starting_pt, ending_pt, width_of_img, height_of_img)
+      });
+
+
+      
+    
+    </script>
+    
+</body>
+</html>
